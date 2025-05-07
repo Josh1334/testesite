@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Oferta Especial</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: linear-gradient(135deg, #1c1c1c 60%, #8B0000 60%);
+      border: 2px solid #ff0000;
+      border-radius: 10px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .left, .right {
+      flex: 1;
+    }
+    h1 {
+      color: #ff3333;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .bonus {
+      background-color: #ff0000;
+      color: white;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+    .countdown {
+      font-size: 24px;
+      font-weight: bold;
+      background-color: black;
+      padding: 10px;
+      margin: 20px 0;
+      border: 2px solid #ff0000;
+      display: inline-block;
+    }
+    .btn {
+      background-color: #ff3333;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .right h2 {
+      color: #ff3333;
+    }
+    .code-box {
+      background-color: black;
+      border: 2px solid red;
+      padding: 10px;
+      margin: 15px 0;
+      display: inline-block;
+      font-weight: bold;
+    }
+    .note {
+      font-size: 12px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>DOMINE O JOGO</h1>
+      <p>Comece pequeno, ganhe grande</p>
+      <div class="bonus">R$37 + 200 GIROS</div>
+      <p>Invista pouco e multiplique suas chances com nossa oferta especial!</p>
+      <div class="countdown" id="timer">05:00:00</div>
+      <br>
+      <button class="btn">ATIVAR OFERTA</button>
+    </div>
+    <div class="right">
+      <h2>ESTRATÉGIA VENCEDORA</h2>
+      <p>Aposte inteligente e maximize seus ganhos</p>
+      <ul>
+        <li>📊 Probabilidades</li>
+        <li>⏱️ Controle</li>
+        <li>💳 Gestão</li>
+      </ul>
+      <p>Use o código:</p>
+      <div class="code-box">INICIO37</div>
+      <p class="note">*Oferta por tempo limitado<br>+18 | Jogue com responsabilidade</p>
+    </div>
+  </div>
+
+  <script>
+    // Contagem regressiva de 5 horas
+    const timer = document.getElementById('timer');
+    let tempo = 5 * 60 * 60; // 5 horas em segundos
+
+    function atualizaTimer() {
+      const h = String(Math.floor(tempo / 3600)).padStart(2, '0');
+      const m = String(Math.floor((tempo % 3600) / 60)).padStart(2, '0');
+      const s = String(tempo % 60).padStart(2, '0');
+      timer.textContent = `${h}:${m}:${s}`;
+      tempo--;
+      if (tempo >= 0) setTimeout(atualizaTimer, 1000);
+    }
+
+    atualizaTimer();
+  </script>
+</body>
+</html>
